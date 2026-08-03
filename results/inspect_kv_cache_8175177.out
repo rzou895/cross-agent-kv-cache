@@ -1,0 +1,129 @@
+===== Initialising environment =====
+===== Slurm information =====
+Job ID: 8175177
+Node: g01.hpc.nesi.org.nz
+Working directory: /nesi/project/uoa04658/rzou895/cross-agent-kv-cache
+Python: /nesi/project/uoa04658/rzou895/conda_envs/cross-agent-kv-cache/bin/python
+CUDA_VISIBLE_DEVICES: 0
+===== Checking Python environment =====
+Python: /nesi/project/uoa04658/rzou895/conda_envs/cross-agent-kv-cache/bin/python
+Torch: 2.13.0+cu126
+===== GPU information =====
+Mon Aug  3 23:55:31 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.82.07              Driver Version: 580.82.07      CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-PCIE-40GB          Off |   00000000:E3:00.0 Off |                    0 |
+| N/A   29C    P0             42W /  250W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+===== Inspecting real KV cache =====
+===== Model setup =====
+Model: Qwen/Qwen2.5-0.5B-Instruct
+Device: cuda
+Model dtype: torch.bfloat16
+Batch size: 1
+Prompt token count: 29
+Configured layers: 24
+Configured attention heads: 14
+Configured KV heads: 2
+
+===== Cache after prompt prefill =====
+Cache class: DynamicCache
+Number of cache layers: 24
+Layer 00: K shape=(1, 2, 29, 64), V shape=(1, 2, 29, 64), dtype=torch.bfloat16, device=cuda:0, bytes=14848
+Layer 01: K shape=(1, 2, 29, 64), V shape=(1, 2, 29, 64), dtype=torch.bfloat16, device=cuda:0, bytes=14848
+Layer 02: K shape=(1, 2, 29, 64), V shape=(1, 2, 29, 64), dtype=torch.bfloat16, device=cuda:0, bytes=14848
+Layer 03: K shape=(1, 2, 29, 64), V shape=(1, 2, 29, 64), dtype=torch.bfloat16, device=cuda:0, bytes=14848
+Layer 04: K shape=(1, 2, 29, 64), V shape=(1, 2, 29, 64), dtype=torch.bfloat16, device=cuda:0, bytes=14848
+Layer 05: K shape=(1, 2, 29, 64), V shape=(1, 2, 29, 64), dtype=torch.bfloat16, device=cuda:0, bytes=14848
+Layer 06: K shape=(1, 2, 29, 64), V shape=(1, 2, 29, 64), dtype=torch.bfloat16, device=cuda:0, bytes=14848
+Layer 07: K shape=(1, 2, 29, 64), V shape=(1, 2, 29, 64), dtype=torch.bfloat16, device=cuda:0, bytes=14848
+Layer 08: K shape=(1, 2, 29, 64), V shape=(1, 2, 29, 64), dtype=torch.bfloat16, device=cuda:0, bytes=14848
+Layer 09: K shape=(1, 2, 29, 64), V shape=(1, 2, 29, 64), dtype=torch.bfloat16, device=cuda:0, bytes=14848
+Layer 10: K shape=(1, 2, 29, 64), V shape=(1, 2, 29, 64), dtype=torch.bfloat16, device=cuda:0, bytes=14848
+Layer 11: K shape=(1, 2, 29, 64), V shape=(1, 2, 29, 64), dtype=torch.bfloat16, device=cuda:0, bytes=14848
+Layer 12: K shape=(1, 2, 29, 64), V shape=(1, 2, 29, 64), dtype=torch.bfloat16, device=cuda:0, bytes=14848
+Layer 13: K shape=(1, 2, 29, 64), V shape=(1, 2, 29, 64), dtype=torch.bfloat16, device=cuda:0, bytes=14848
+Layer 14: K shape=(1, 2, 29, 64), V shape=(1, 2, 29, 64), dtype=torch.bfloat16, device=cuda:0, bytes=14848
+Layer 15: K shape=(1, 2, 29, 64), V shape=(1, 2, 29, 64), dtype=torch.bfloat16, device=cuda:0, bytes=14848
+Layer 16: K shape=(1, 2, 29, 64), V shape=(1, 2, 29, 64), dtype=torch.bfloat16, device=cuda:0, bytes=14848
+Layer 17: K shape=(1, 2, 29, 64), V shape=(1, 2, 29, 64), dtype=torch.bfloat16, device=cuda:0, bytes=14848
+Layer 18: K shape=(1, 2, 29, 64), V shape=(1, 2, 29, 64), dtype=torch.bfloat16, device=cuda:0, bytes=14848
+Layer 19: K shape=(1, 2, 29, 64), V shape=(1, 2, 29, 64), dtype=torch.bfloat16, device=cuda:0, bytes=14848
+Layer 20: K shape=(1, 2, 29, 64), V shape=(1, 2, 29, 64), dtype=torch.bfloat16, device=cuda:0, bytes=14848
+Layer 21: K shape=(1, 2, 29, 64), V shape=(1, 2, 29, 64), dtype=torch.bfloat16, device=cuda:0, bytes=14848
+Layer 22: K shape=(1, 2, 29, 64), V shape=(1, 2, 29, 64), dtype=torch.bfloat16, device=cuda:0, bytes=14848
+Layer 23: K shape=(1, 2, 29, 64), V shape=(1, 2, 29, 64), dtype=torch.bfloat16, device=cuda:0, bytes=14848
+Cache sequence length: 29
+Total cache bytes: 356352
+Total cache KiB: 348.000
+Total cache MiB: 0.339844
+
+===== Manual byte calculation =====
+24 layers × 2 (K and V) × 1 batch × 2 KV heads × 29 tokens × 64 head dimension × 2 bytes
+Manual result:  356352 bytes
+Program result: 356352 bytes
+Difference:     0 bytes
+
+===== Cache after one additional token =====
+Cache class: DynamicCache
+Number of cache layers: 24
+Layer 00: K shape=(1, 2, 30, 64), V shape=(1, 2, 30, 64), dtype=torch.bfloat16, device=cuda:0, bytes=15360
+Layer 01: K shape=(1, 2, 30, 64), V shape=(1, 2, 30, 64), dtype=torch.bfloat16, device=cuda:0, bytes=15360
+Layer 02: K shape=(1, 2, 30, 64), V shape=(1, 2, 30, 64), dtype=torch.bfloat16, device=cuda:0, bytes=15360
+Layer 03: K shape=(1, 2, 30, 64), V shape=(1, 2, 30, 64), dtype=torch.bfloat16, device=cuda:0, bytes=15360
+Layer 04: K shape=(1, 2, 30, 64), V shape=(1, 2, 30, 64), dtype=torch.bfloat16, device=cuda:0, bytes=15360
+Layer 05: K shape=(1, 2, 30, 64), V shape=(1, 2, 30, 64), dtype=torch.bfloat16, device=cuda:0, bytes=15360
+Layer 06: K shape=(1, 2, 30, 64), V shape=(1, 2, 30, 64), dtype=torch.bfloat16, device=cuda:0, bytes=15360
+Layer 07: K shape=(1, 2, 30, 64), V shape=(1, 2, 30, 64), dtype=torch.bfloat16, device=cuda:0, bytes=15360
+Layer 08: K shape=(1, 2, 30, 64), V shape=(1, 2, 30, 64), dtype=torch.bfloat16, device=cuda:0, bytes=15360
+Layer 09: K shape=(1, 2, 30, 64), V shape=(1, 2, 30, 64), dtype=torch.bfloat16, device=cuda:0, bytes=15360
+Layer 10: K shape=(1, 2, 30, 64), V shape=(1, 2, 30, 64), dtype=torch.bfloat16, device=cuda:0, bytes=15360
+Layer 11: K shape=(1, 2, 30, 64), V shape=(1, 2, 30, 64), dtype=torch.bfloat16, device=cuda:0, bytes=15360
+Layer 12: K shape=(1, 2, 30, 64), V shape=(1, 2, 30, 64), dtype=torch.bfloat16, device=cuda:0, bytes=15360
+Layer 13: K shape=(1, 2, 30, 64), V shape=(1, 2, 30, 64), dtype=torch.bfloat16, device=cuda:0, bytes=15360
+Layer 14: K shape=(1, 2, 30, 64), V shape=(1, 2, 30, 64), dtype=torch.bfloat16, device=cuda:0, bytes=15360
+Layer 15: K shape=(1, 2, 30, 64), V shape=(1, 2, 30, 64), dtype=torch.bfloat16, device=cuda:0, bytes=15360
+Layer 16: K shape=(1, 2, 30, 64), V shape=(1, 2, 30, 64), dtype=torch.bfloat16, device=cuda:0, bytes=15360
+Layer 17: K shape=(1, 2, 30, 64), V shape=(1, 2, 30, 64), dtype=torch.bfloat16, device=cuda:0, bytes=15360
+Layer 18: K shape=(1, 2, 30, 64), V shape=(1, 2, 30, 64), dtype=torch.bfloat16, device=cuda:0, bytes=15360
+Layer 19: K shape=(1, 2, 30, 64), V shape=(1, 2, 30, 64), dtype=torch.bfloat16, device=cuda:0, bytes=15360
+Layer 20: K shape=(1, 2, 30, 64), V shape=(1, 2, 30, 64), dtype=torch.bfloat16, device=cuda:0, bytes=15360
+Layer 21: K shape=(1, 2, 30, 64), V shape=(1, 2, 30, 64), dtype=torch.bfloat16, device=cuda:0, bytes=15360
+Layer 22: K shape=(1, 2, 30, 64), V shape=(1, 2, 30, 64), dtype=torch.bfloat16, device=cuda:0, bytes=15360
+Layer 23: K shape=(1, 2, 30, 64), V shape=(1, 2, 30, 64), dtype=torch.bfloat16, device=cuda:0, bytes=15360
+Cache sequence length: 30
+Total cache bytes: 368640
+Total cache KiB: 360.000
+Total cache MiB: 0.351562
+
+===== Manual byte calculation =====
+24 layers × 2 (K and V) × 1 batch × 2 KV heads × 30 tokens × 64 head dimension × 2 bytes
+Manual result:  368640 bytes
+Program result: 368640 bytes
+Difference:     0 bytes
+
+===== Growth check =====
+Sequence length: 29 → 30
+Cache bytes: 356352 → 368640
+Bytes added by one token: 12288
+
+ALL DAY 3 KV CACHE CHECKS PASSED
+===== Running lightweight tests =====
+test_sequence_dimension_growth: PASSED
+test_byte_calculation: PASSED
+ALL LIGHTWEIGHT KV CACHE TESTS PASSED
+===== Job completed =====
