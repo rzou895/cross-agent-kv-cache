@@ -1,0 +1,70 @@
+===== Initialising environment =====
+===== Slurm information =====
+Job ID: 8136322
+Node: g03.hpc.nesi.org.nz
+Working directory: /nesi/project/uoa04658/rzou895/cross-agent-kv-cache
+Python: /nesi/project/uoa04658/rzou895/conda_envs/cross-agent-kv-cache/bin/python
+CUDA_VISIBLE_DEVICES: 0
+===== GPU information =====
+Sun Aug  2 07:41:42 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 580.82.07              Driver Version: 580.82.07      CUDA Version: 13.0     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA A100-PCIE-40GB          Off |   00000000:82:00.0 Off |                    0 |
+| N/A   44C    P0             48W /  250W |       0MiB /  40960MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+===== Python environment =====
+=== System ===
+Python: 3.10.20 | packaged by conda-forge | (main, Jun 11 2026, 03:31:56) [GCC 14.3.0]
+Platform: Linux-5.14.0-427.42.1.el9_4.x86_64-x86_64-with-glibc2.34
+Processor: x86_64
+
+=== Python packages ===
+torch: 2.13.0+cu126
+transformers: 5.14.1
+datasets: 5.0.0
+accelerate: 1.14.0
+pandas: 2.3.3
+numpy: 2.2.6
+scipy: 1.15.3
+matplotlib: 3.10.9
+seaborn: 0.13.2
+
+=== CUDA and device ===
+CUDA available: True
+PyTorch CUDA build: 12.6
+cuDNN version: 91002
+GPU index: 0
+GPU name: NVIDIA A100-PCIE-40GB
+GPU compute capability: 8.0
+Total GPU memory: 39.49 GiB
+Currently free GPU memory: 39.08 GiB
+===== Greedy generation =====
+Model: Qwen/Qwen2.5-0.5B-Instruct
+Device: cuda
+Data type: torch.bfloat16
+
+=== Generated text ===
+A KVM (Key-Value Memory) cache is a type of memory that stores key-value pairs, where the keys are used to access the corresponding values. In a transformer, a KVM cache can be used to improve the performance of the model by reducing the number of queries made to the model's internal state.
+
+
+=== Generation statistics ===
+Input token count: 36
+Generated token count: 64
+Elapsed time: 1.910 seconds
+Generation speed: 33.51 tokens/second
+Peak allocated GPU memory: 0.939 GiB
+===== Job completed =====

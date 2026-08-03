@@ -1,0 +1,17 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Slurm temporary output
+
+# Local environments
+.venv/
+venv/
+.env
+
+# Hugging Face and PyTorch caches
+.cache/
+huggingface/
+torch/
+# Slurm error logs
+results/*.err

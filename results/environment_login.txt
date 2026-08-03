@@ -1,0 +1,23 @@
+=== System ===
+Python: 3.10.20 | packaged by conda-forge | (main, Jun 11 2026, 03:31:56) [GCC 14.3.0]
+Platform: Linux-5.14.0-687.30.1.el9_8.x86_64-x86_64-with-glibc2.34
+Processor: x86_64
+
+=== Python packages ===
+torch: 2.13.0+cu126
+transformers: 5.14.1
+datasets: 5.0.0
+accelerate: 1.14.0
+pandas: 2.3.3
+numpy: 2.2.6
+scipy: 1.15.3
+matplotlib: 3.10.9
+seaborn: 0.13.2
+
+=== CUDA and device ===
+CUDA available: False
+PyTorch CUDA build: 12.6
+cuDNN version: 91002
+GPU name: N/A
+Total GPU memory: N/A
+Execution device: CPU
