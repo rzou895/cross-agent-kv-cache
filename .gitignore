@@ -15,3 +15,11 @@ huggingface/
 torch/
 # Slurm error logs
 results/*.err
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Slurm runtime logs
+results/**/*.out
+results/**/*.err
