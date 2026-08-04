@@ -23,3 +23,4 @@ __pycache__/
 # Slurm runtime logs
 results/**/*.out
 results/**/*.err
+results/week01/*_smoke.jsonl
