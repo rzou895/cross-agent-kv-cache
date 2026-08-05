@@ -1,0 +1,32 @@
+Symmetric INT8 fake-quantization demonstration
+Fixed calibration scale: 0.03203766
+
+===== Calibration tensor =====
+Shape: (4096,)
+Input dtype: torch.float32
+Quantized dtype: torch.int8
+Scale: 0.03203766
+Saturation rate: 0.0000%
+MSE: 0.00008573
+Maximum absolute error: 0.01601240
+Quantized range: [-127, 114]
+
+===== Similar distribution =====
+Shape: (4096,)
+Input dtype: torch.float32
+Quantized dtype: torch.int8
+Scale: 0.03203766
+Saturation rate: 0.0000%
+MSE: 0.00008514
+Maximum absolute error: 0.01601835
+Quantized range: [-117, 122]
+
+===== Wider distribution =====
+Shape: (4096,)
+Input dtype: torch.float32
+Quantized dtype: torch.int8
+Scale: 0.03203766
+Saturation rate: 17.1387%
+MSE: 0.62300611
+Maximum absolute error: 6.69556952
+Quantized range: [-127, 127]
