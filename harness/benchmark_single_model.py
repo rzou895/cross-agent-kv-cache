@@ -37,11 +37,25 @@ PROMPTS = [
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
+
     parser.add_argument(
         "--smoke",
         action="store_true",
         help="Run 1 prompt, 3 repetitions, 1 warm-up and 8 output tokens.",
     )
+    parser.add_argument(
+        "--seed",
+        type=int,
+        default=1234,
+        help="Random seed. Default: 1234.",
+    )
+    parser.add_argument(
+        "--output",
+        type=Path,
+        default=None,
+        help="Output JSONL path.",
+    )
+
     return parser.parse_args()
 
 
@@ -199,16 +213,24 @@ def main() -> None:
         runs = 3
         warmup_runs = 1
         max_new_tokens = 8
-        output_path = Path("results/week01/single_model_fp16_smoke.jsonl")
+        default_output_path = Path(
+            "results/week01/single_model_fp16_smoke.jsonl"
+        )
     else:
         prompts = PROMPTS
         runs = RUNS
         warmup_runs = WARMUP_RUNS
         max_new_tokens = MAX_NEW_TOKENS
-        output_path = OUTPUT_PATH
+        default_output_path = OUTPUT_PATH
 
-    torch.manual_seed(1234)
-    torch.cuda.manual_seed_all(1234)
+    output_path = (
+        args.output
+        if args.output is not None
+        else default_output_path
+    )
+
+    torch.manual_seed(args.seed)
+    torch.cuda.manual_seed_all(args.seed)
 
     device = torch.device("cuda:0")
 
@@ -281,6 +303,7 @@ def main() -> None:
                 "prompt": prompt,
                 "model": MODEL_ID,
                 "dtype": "float16",
+                "seed": args.seed,
                 "gpu": torch.cuda.get_device_name(device),
                 "torch_version": torch.__version__,
                 "transformers_version": transformers.__version__,
